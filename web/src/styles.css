@@ -1,0 +1,292 @@
+:root {
+  --line: #d9dee8;
+  --ink: #1f2733;
+  --muted: #5b6675;
+  --blue: #2563eb;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --green-bg: #ecfdf5;
+  --green-line: #a7f3d0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC',
+    'Microsoft YaHei', sans-serif;
+  color: var(--ink);
+  background: #f4f6fa;
+}
+
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.well-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.well-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fbfcfe;
+}
+
+.well-card-head {
+  display: flex;
+  gap: 6px;
+}
+
+.id-input {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.well-card label {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+input,
+select {
+  padding: 5px 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+  color: inherit;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 0;
+  border-color: var(--blue);
+}
+
+.mini {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.mini:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mini.danger {
+  color: var(--red);
+  padding: 4px 8px;
+}
+
+.transfer-table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f1f4f9;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.transfer-table td input,
+.transfer-table td select {
+  min-width: 78px;
+}
+
+.row-ops {
+  white-space: nowrap;
+  display: flex;
+  gap: 4px;
+}
+
+tr.failed-row {
+  background: var(--red-bg);
+}
+
+tr.failed-row td {
+  border-color: #fca5a5;
+}
+
+.submit-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.primary {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.stale-hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.error-panel {
+  border-color: #fca5a5;
+  background: var(--red-bg);
+}
+
+.error-message {
+  margin: 0 0 8px;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.error-facts {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+}
+
+.field-issue {
+  display: block;
+  color: var(--red);
+  font-size: 11px;
+}
+
+.conservation.ok {
+  background: var(--green-bg);
+  border-color: var(--green-line);
+}
+
+.conservation.bad {
+  background: var(--red-bg);
+  border-color: #fca5a5;
+}
+
+.cons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-bottom: 10px;
+}
+
+.cons-grid .label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+details summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.evidence-table {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.result-grid {
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+}
+
+.well-cell {
+  aspect-ratio: 1 / 1.08;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.well-cell-id {
+  font-weight: 700;
+}
+
+.well-cell-c {
+  font-size: 15px;
+}
+
+.well-cell-v {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.trace-table td {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 14px 10px 40px;
+  }
+}

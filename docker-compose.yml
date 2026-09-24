@@ -1,0 +1,16 @@
+services:
+  api:
+    build: ./backend
+    container_name: plate-api
+    restart: unless-stopped
+    expose:
+      - "8000"
+
+  web:
+    build: ./web
+    container_name: plate-web
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "8080:80"
